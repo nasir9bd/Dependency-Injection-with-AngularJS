@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html lang="en" ng-app="tempApp">
 <head>
 	<meta charset="utf-8">
 	<title>My AngularJS App</title>
@@ -7,10 +7,16 @@
 </head>
 
 <body>
-	Current temperature: <input ng-model='temp' type='number' /> Celcius
-	<p ng-show="temp>17">Not too bad! {{temp}} degrees, {{temp - 10}} would be a little cold </p>
-	<p ng-show="temp<=17">Too Cold Here </p>
+	<ul class="menu">
+		<li><a href="#/current">Current</a></li>
+		<li><a href="#/history">History</a></li>
+	</ul>
+
+	<div ng-view></div>
 
 	<script src="lib/angular.js"></script>
+	<script src="lib/angular-route.js"></script>
+	<script src="app/js/app.js"></script>
+	<script src="app/js/controllers.js"></script>
 </body>
 </html>
